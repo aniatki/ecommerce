@@ -47,5 +47,3 @@ jobs:
           action: "upload"
           app_location: "/"
           output_location: "build"
-          skip_app_build: true
-
