@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import ProductCard from "./ProductCard";
@@ -7,7 +7,7 @@ const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
-  let componentMounted = true;
+  let componentMounted = useRef(true);
 
   useEffect(() => {
     const getProducts = async () => {
@@ -20,7 +20,7 @@ const Products = () => {
       }
 
       return () => {
-        componentMounted = false;
+        componentMounted.current = false;
       };
     };
 
