@@ -31,7 +31,7 @@ jobs:
           NODE_OPTIONS: --openssl-legacy-provider
           CI: false
 
-      - name: Debug: list build folder contents
+      - name: Debug
         run: |
           echo "Contents of build/:"
           ls -alh build
@@ -48,3 +48,4 @@ jobs:
           app_location: "/"
           output_location: "build"
           skip_app_build: true
+
